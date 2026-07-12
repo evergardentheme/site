@@ -1,6 +1,10 @@
 - repo: nvim
   name: neovim
   desc: "Neovim is a Vim-based text editor built on Lua and libuv"
+- repo: helix
+  desc: "A Kakoune / Neovim inspired editor"
+- repo: zed
+  desc: "Minimal code editor crafted for speed and collaboration"
 - repo: adwaita
   desc: "Uniform theme for GTK"
 - repo: aerc
@@ -29,8 +33,6 @@
   desc: "Self-hosted lightweight software forge"
 - repo: halloy
   desc: "Simple and fast IRC client"
-- repo: helix
-  desc: "A Kakoune / Neovim inspired editor"
 - repo: iterm
   desc: "Terminal emulator for macOS"
 - repo: jellyfin
@@ -67,5 +69,3 @@
   desc: "Terminal file manager"
 - repo: zathura
   desc: "Functional document viewer"
-- repo: zed
-  desc: "Minimal code editor crafted for speed and collaboration"
