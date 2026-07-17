@@ -23,6 +23,8 @@
   desc: "VoIP internet messenger"
 - repo: dunst
   desc: "Lightweight notification daemon"
+- repo: fish
+  desc: "User-friendly command line shell"
 - repo: foot
   desc: "Minimalistic Wayland terminal emulator"
 - repo: fzf
