@@ -17,6 +17,8 @@
   desc: "Simple ansi colorscheme"
 - repo: bat
   desc: "A cat(1) clone with wings"
+- repo: btop
+  desc: "Resource monitor for POSIX systems"
 - repo: chrome
   desc: "Official web browser from Google"
 - repo: discord
