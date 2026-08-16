@@ -1,0 +1,4 @@
+std = 'maivi'
+
+[lints]
+mixed_table = 'allow'

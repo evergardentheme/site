@@ -1,0 +1,34 @@
+]0;#f8f9e8\]10;#f8f9e8\]11;#1e2528\]12;#cbe3b3\[38;2;248;249;232m[1m
+evergarden[22m
+
+evergarden is a colorscheme inspired by lush forests, enchanted groves, and the
+calm of nature. It was also inspired by the lively art of The Legend of Zelda:
+The Minish Cap. It's designed to be easy on the eyes, elegant, and just plain
+nice to look at - whether you're coding, writing, or just staring at your
+terminal for fun (we won't judge).
+[33m
+[38;2;245;127;130m[1mred:       #f57f82[22m
+[38;2;247;161;130m[1morange:    #f7a182[22m
+[38;2;245;208;152m[1myellow:    #f5d098[22m
+[38;2;219;230;175m[1mlime:      #dbe6af[22m
+[38;2;203;227;179m[1mgreen:     #cbe3b3[22m
+[38;2;179;227;202m[1maqua:      #b3e3ca[22m
+[38;2;179;230;219m[1mskye:      #b3e6db[22m
+[38;2;175;217;230m[1msnow:      #afd9e6[22m
+[38;2;178;202;237m[1mblue:      #b2caed[22m
+[38;2;210;189;243m[1mpurple:    #d2bdf3[22m
+[38;2;243;192;229m[1mpink:      #f3c0e5[22m
+[38;2;250;230;239m[1mcherry:    #fae6ef[22m
+[38;2;248;249;232m[1mtext:      #f8f9e8[22m
+[38;2;173;201;188m[1msubtext1:  #adc9bc[22m
+[38;2;150;180;170m[1msubtext0:  #96b4aa[22m
+[38;2;131;158;154m[1moverlay2:  #839e9a[22m
+[38;2;111;135;136m[1moverlay1:  #6f8788[22m
+[38;2;88;104;109m[1moverlay0:  #58686d[22m
+[38;2;74;88;92m[1msurface2:  #4a585c[22m
+[38;2;55;65;69m[1msurface1:  #374145[22m
+[38;2;38;47;51m[1msurface0:  #262f33[22m
+[38;2;30;37;40m[1mbase:      #1e2528[22m
+[38;2;25;30;33m[1mmantle:    #191e21[22m
+[38;2;23;28;31m[1mcrust:     #171c1f[22m
+

@@ -1,0 +1,36 @@
+name: "maivi"
+base: "luajit"
+
+globals:
+  # maivi =======================================================================
+  maivi:
+    any: true
+
+  # h ===========================================================================
+  h:
+    any: true
+
+  # this ========================================================================
+  this.base_url:
+    property: read-only
+  this.rev:
+    property: read-only
+  this.data:
+    any: true
+  this.ctx:
+    args: []
+  this._ctx.title:
+    property: read-only
+  this._ctx.desc:
+    property: read-only
+  this._ctx.path:
+    property: read-only
+  this._ctx.content:
+    any: true
+
+  # utils =======================================================================
+  read:
+    args:
+      - type: string
+  Iter:
+    any: true

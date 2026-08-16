@@ -1,0 +1,35 @@
+{
+  "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
+  "runtime": {
+    "version": "LuaJIT"
+  },
+  "workspace": {
+    "library": [
+      "/home/robin/dev/maivi/src/lua/runtime"
+    ],
+    "checkThirdParty": "Disable"
+  },
+  "diagnostics": {
+    "groupFileStatus": {
+      "strict": "Any",
+      "strong": "Any"
+    },
+    "groupSeverity": {
+      "strong": "Warning",
+      "strict": "Warning"
+    },
+    "unusedLocalExclude": [
+      "_*"
+    ]
+  },
+  "format": {
+    "externalTool": {
+      "program": "stylua",
+      "args": [
+        "-",
+        "--stdin-filepath",
+        "${file}"
+      ]
+    }
+  }
+}

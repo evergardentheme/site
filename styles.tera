@@ -1,7 +1,7 @@
 ---
 whiskers:
   version: ^2.0.0
-  filename: "src/styles/_variables.scss"
+  filename: "lua/styles/_variables.scss"
 ---
 @mixin theme-variables($theme) {
   --theme-red: var(--var-color-#{$theme}-red);

@@ -1,0 +1,24 @@
+time-format = "%Y-%m-%d %T.%3N"
+time-zone = "UTC"
+
+[fields]
+ignore = ["_*"]
+
+[[fields.predefined.level.variants]]
+names = ["level"]
+
+[fields.predefined.level.variants.values]
+fatal = ["fatal"]
+error = ["error"]
+warning = ["warn"]
+info = ["info"]
+debug = ["debug"]
+trace = ["trace"]
+
+[fields.predefined]
+time.names = ["ts"]
+logger.names = ["ctx"]
+message.names = ["msg"]
+caller.names = ["src.fn"]
+caller-file.names = ["src.file"]
+caller-line.names = ["src.ln"]

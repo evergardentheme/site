@@ -1,0 +1,357 @@
+main {
+  display: grid;
+  grid-template:
+    "title" 1fr
+    "palette" 1fr
+    "footer" auto
+    / 1fr;
+
+  @media (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    margin: 5rem auto 4rem;
+    max-width: 90ch;
+
+    display: grid;
+    grid-template: auto 1fr / 1fr;
+
+    @media (max-width: 800px) {
+      margin: 3rem 1rem;
+    }
+
+    h1 {
+      font-size: 3.36rem;
+    }
+
+    p {
+      line-height: 1.4;
+      margin: 1rem 0 0;
+
+      @media (min-width: 800px) {
+        font-size: 1.2rem;
+      }
+
+      @media (max-width: 800px) {
+        margin: 2rem 0 0;
+      }
+    }
+
+    pre:has(code) {
+      background-color: var(--mantle);
+      color: var(--subtext1);
+      padding: 0.5rem;
+      margin: 1rem 0 0 0;
+      overflow-x: auto;
+
+      @media (min-width: 800px) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  footer {
+    text-align: center;
+    color: var(--subtext0);
+
+    @media (max-width: 800px) {
+      margin: 3rem 0;
+    }
+  }
+}
+
+#drawer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  isolation: isolate;
+
+  display: grid;
+  grid-template-rows: auto 1fr;
+
+  #drawer-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 100%;
+    overflow: hidden;
+
+    gap: var(--padding);
+
+    --padding: 1rem;
+
+    .links {
+      display: flex;
+      flex-direction: row;
+      background-color: var(--mantle);
+
+      padding: 0 var(--padding);
+      gap: var(--padding);
+
+      overflow-x: scroll;
+    }
+  }
+}
+
+.drawer-toggle {
+  background-color: var(--mantle);
+  z-index: 2;
+  padding: 0 var(--padding);
+  width: min-content;
+
+  input {
+    appearance: none;
+  }
+
+  &:has(input:checked) {
+    background-color: var(--base);
+  }
+}
+
+section.drawer {
+  background-color: var(--mantle);
+  height: 0;
+  width: 100%;
+
+  overflow-y: scroll;
+
+  transition:
+    background-color 200ms ease-in,
+    height 200ms ease-in;
+
+  #drawer-bar:has(.drawer-toggle input:checked)+& {
+    height: 80vh;
+    background-color: var(--base);
+  }
+}
+
+.dim-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--crust);
+  z-index: 1;
+  pointer-events: none;
+
+  transition: opacity 200ms ease-in;
+  opacity: 0;
+
+  #drawer:has(#drawer-bar .drawer-toggle input:checked)+& {
+    opacity: 0.8;
+  }
+}
+
+/* palette ============================================================================ */
+
+.palette-colors {
+  display: grid;
+  width: 100%;
+
+  grid-template-columns: repeat(24, 1fr);
+
+  isolation: isolate;
+
+  --skew: -15deg;
+
+  @media (max-width: 800px) {
+    grid-template-columns: unset;
+    grid-template-rows: repeat(24, 6rem);
+  }
+
+  @media (min-width: 800px) {
+    height: 40vh;
+  }
+
+  @media (max-width: 800px) {
+    --skew: 0;
+  }
+
+  /* summer */
+  .variants> :last-child .colorbox label {
+    color: var(--text);
+  }
+
+  .swatch:nth-last-child(-n + 6) {
+    .colorbox label {
+      color: var(--text);
+    }
+
+    /* summer */
+    .variants> :last-child .colorbox label {
+      color: var(--crust);
+    }
+  }
+}
+
+/* ports ============================================================================== */
+
+ul[role="list"].ports {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+  }
+
+  li.port {
+    padding: 0.2rem 0.5rem;
+
+    span {
+      h3 {
+        margin: 0.2rem 0rem 0.4rem;
+      }
+
+      .desc {
+        color: var(--subtext0);
+      }
+    }
+  }
+}
+
+/* swatch ============================================================================= */
+
+@keyframes overlay {
+  from {
+    translate: var(--before);
+    z-index: initial;
+  }
+
+  to {
+    transform: var(--after);
+    z-index: var(--new-z-index);
+  }
+}
+
+@keyframes overlay-out {
+  from {
+    transform: var(--after);
+    z-index: var(--new-z-index);
+  }
+
+  99% {
+    z-index: var(--new-z-index);
+  }
+
+  to {
+    translate: var(--before);
+    z-index: initial;
+  }
+}
+
+.swatch {
+  position: relative;
+
+  height: 100%;
+  width: 100%;
+
+  .bg {
+    position: absolute;
+    inset: 0;
+  }
+
+  &:hover .overlay {
+    opacity: 1;
+    background-color: inherit;
+  }
+
+  .colorbox {
+    z-index: 5;
+  }
+
+  @media (min-width: 800px) {
+    .bg {
+      --before: skew(var(--skew)) scaleX(104%);
+      --after: skew(var(--skew)) scaleX(250%);
+      --new-z-index: 3;
+
+      transform: skew(var(--skew)) scaleX(104%);
+      animation: overlay-out 100ms forwards;
+    }
+
+    &:hover .bg {
+      animation: overlay 150ms forwards;
+    }
+  }
+
+  .overlay {
+    position: absolute;
+    z-index: 100;
+    inset: 0;
+    height: 100%;
+
+    opacity: 0;
+    transition: opacity 100ms ease-out;
+
+    & {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      >span {
+        color: var(--text);
+        background-color: var(--mantle);
+        margin: 0 0 0.5rem;
+        padding: 0 1rem;
+      }
+
+      .variants {
+        display: flex;
+        flex-direction: column;
+        gap: 0.375rem;
+        width: 100%;
+
+        @media (max-width: 800px) {
+          flex-direction: row;
+        }
+
+        >div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.375rem;
+          width: 100%;
+
+          >span {
+            text-transform: lowercase;
+            color: var(--text);
+            background-color: var(--mantle);
+            padding: 0 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.colorbox {
+  height: 1.5rem;
+  aspect-ratio: 1;
+  border: 1px solid var(--surface0);
+  border-radius: 6px;
+  padding: 0 1rem;
+
+  label {
+    font-size: 0.72rem;
+    color: var(--crust);
+  }
+
+  &.copy {
+    position: relative;
+
+    &:hover {
+      border-color: var(--overlay0);
+    }
+  }
+}

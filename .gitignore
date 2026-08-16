@@ -1,6 +1,6 @@
-.env
+/build/
+/.rewritten/
 
-.pnpm-store
-node_modules
-
-dist
+# dev
+/.env
+/.direnv/

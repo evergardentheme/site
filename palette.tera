@@ -1,7 +1,7 @@
 ---
 whiskers:
   version: ^2.0.0
-  filename: "src/data/palette.yml"
+  filename: "lua/data/palette.yml"
 ---
 {% for _, flavor in flavors -%}
 - name: {{flavor.name}}
