@@ -29,7 +29,7 @@ terminal for fun (we won't judge).
 
 {%- set colors_length = flavor.colors | length %}
 {%- for i, color in flavor.colors %}
-[38;2;{{color.rgb.r}};{{color.rgb.g}};{{color.rgb.b}}m[1m{{color.name}}:
+[38;2;{{color.rgb.r}};{{color.rgb.g}};{{color.rgb.b}}m[1m{{color.name}}
 
 {%- set color_length = color.name | length %}
 {%- for _ in range(end=offset - color_length + 2) %} {% endfor -%}
