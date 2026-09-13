@@ -53,8 +53,16 @@ return {
     desc = "Lightweight notification daemon",
   },
   {
+    repo = "eza",
+    desc = "Modern ls(1) alternative",
+  },
+  {
     repo = "fish",
     desc = "User-friendly command line shell",
+  },
+  {
+    repo = "fuzzel",
+    desc = "App launcher and fuzzy finder for Wayland",
   },
   {
     repo = "foot",
@@ -95,6 +103,10 @@ return {
   {
     repo = "lazygit",
     desc = "Simple terminal UI for git commands",
+  },
+  {
+    repo = "mako",
+    desc = "Lightweight Wayland notification daemon",
   },
   {
     repo = "mixplorer",
