@@ -1,3 +1,5 @@
+set shell := ["/bin/sh", "-c"]
+
 export MAIVI_PORT := "3000"
 
 [env("MAIVI_BASE_URL", "https://evergarden.moe")]
@@ -20,7 +22,8 @@ gen: (whiskers)
 
 [private]
 maivi *args:
-  ~/dev/maivi/zig-out/bin/maivi {{ args }} |& hl -P --config=hl.toml
+  mkdir -p data
+  maivi {{ args }}
 
 whiskers:
   whiskers palette.tera
@@ -28,9 +31,9 @@ whiskers:
   whiskers index.txt.tera -f winter
 
 compile: build
-  mkdir -p .rewritten/
-  cp -r build/* .rewritten/
-  cp -r static/* .rewritten/
+  mkdir -p dist/
+  cp -r build/* dist/
+  cp -r static/* dist/
 
 push: (compile)
-  ebil push
+  ebil push --user evergarden dist/

@@ -1,3 +1,1 @@
-return function()
-  maivi.router:add("/", maivi.mod("index"), {})
-end
+maivi.router:add("/", maivi.mod("index"), {})
