@@ -111,6 +111,10 @@ main {
   padding: 0 var(--padding);
   width: min-content;
 
+  label {
+    cursor: pointer;
+  }
+
   input {
     appearance: none;
   }
@@ -342,12 +346,14 @@ ul[role="list"].ports {
   }
 }
 
-.colorbox {
+button.colorbox {
   height: 1.5rem;
   aspect-ratio: 1;
   border: 1px solid var(--surface0);
   border-radius: 6px;
   padding: 0 1rem;
+
+  cursor: pointer;
 
   label {
     font-size: 0.72rem;
