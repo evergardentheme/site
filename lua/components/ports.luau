@@ -1,10 +1,10 @@
-local ports = require("data.ports")
+local ports = require("@self/data/ports")
 
-return function(_, _)
+return maivi.component(function(_, _)
   return h.ul({
     role = "list",
     class = "ports",
-    h(Iter.lst(ports)
+    h(maivi.iter.lst(ports)
       :map(function(_, port)
         return h.li({
           class = "port",
@@ -24,4 +24,4 @@ return function(_, _)
       end)
       :to()),
   })
-end
+end)

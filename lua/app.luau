@@ -1,4 +1,7 @@
-return function(_, _)
+local palette = require("@self/components/palette")
+local ports = require("@self/components/ports")
+
+return maivi.component(function(_, _)
   return h({
     h.main({
       h.header({
@@ -23,7 +26,7 @@ by the way, you can try out the colors in your terminal by running: ]]),
           }),
         }),
       }),
-      maivi.mod("components.palette"),
+      palette,
       h.footer({
         h.div({
           [[this site is built with ]],
@@ -84,9 +87,9 @@ by the way, you can try out the colors in your terminal by running: ]]),
       h.section({
         id = "ports-drawer",
         class = "drawer",
-        maivi.mod("components.ports"),
+        ports,
       }),
     }),
     h.div({ class = "dim-overlay" }),
   })
-end
+end)

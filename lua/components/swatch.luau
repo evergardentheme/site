@@ -1,5 +1,5 @@
-local palette = require("data.palette")
-local colorbox = maivi.mod("components.colorbox")
+local colorbox = require("@self/components/colorbox")
+local palette = require("@self/data/palette")
 
 ---@param color string
 ---@param i integer
@@ -18,7 +18,7 @@ local function colorFor(color, i)
   end
 end
 
-return function(props, _)
+return maivi.component(function(props, _)
   local color = props.color
 
   return h.div({
@@ -35,7 +35,7 @@ return function(props, _)
       h.span(color),
       h.div({
         class = "variants",
-        h(Iter.lst(palette)
+        h(maivi.iter.lst(palette)
           :map(function(i, variant)
             return h.div({
               h.span(variant.name),
@@ -48,4 +48,4 @@ return function(props, _)
       }),
     }),
   })
-end
+end)

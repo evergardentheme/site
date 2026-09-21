@@ -1,5 +1,5 @@
 name: "maivi"
-base: "luajit"
+base: "luau"
 
 globals:
   # maivi =======================================================================
@@ -17,20 +17,23 @@ globals:
     property: read-only
   this.data:
     any: true
-  this.ctx:
-    args: []
-  this._ctx.title:
+
+  # ctx =======================================================================
+  ctx.path:
+    type: string
     property: read-only
-  this._ctx.desc:
+  ctx.props.title:
+    type: string
     property: read-only
-  this._ctx.path:
+  ctx.props.desc:
+    type: string
     property: read-only
-  this._ctx.content:
+  ctx.props.path:
+    type: string
+    property: read-only
+  ctx.props.content:
     any: true
 
   # utils =======================================================================
-  read:
-    args:
-      - type: string
-  Iter:
+  fs:
     any: true

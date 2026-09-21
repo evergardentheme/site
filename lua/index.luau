@@ -1,4 +1,6 @@
-return function(_)
+local app = require("@self/app")
+
+return maivi.component(function(_, _)
   return h.document({
     h.html({
       lang = "en",
@@ -36,8 +38,8 @@ return function(_)
         }),
       }),
       h.body({
-        maivi.mod("app"),
+        app,
       }),
     }),
   })
-end
+end)

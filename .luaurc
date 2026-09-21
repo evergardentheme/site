@@ -1,0 +1,6 @@
+{
+  "aliases": {
+    "maivi": ".maivi",
+    "self": "lua"
+  }
+}

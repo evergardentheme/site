@@ -1,16 +1,16 @@
-local palette = require("data.palette")
-local swatch = maivi.mod("components.swatch")
+local palette = require("@self/data/palette")
+local swatch = require("@self/components/swatch")
 
-return function(_, _)
+return maivi.component(function(_, _)
   local variant = palette[1]
 
   return h.div({
     class = "palette-colors",
 
-    h(Iter.tbl(variant.colors)
+    h(maivi.iter.tbl(variant.colors)
       :map(function(_, v)
         return swatch({ color = v.name })
       end)
       :to()),
   })
-end
+end)
