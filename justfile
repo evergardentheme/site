@@ -31,9 +31,14 @@ whiskers:
   whiskers index.txt.tera -f winter
 
 compile: build
+  #!/usr/bin/env bash
+  rm -r dist
   mkdir -p dist/
-  cp -r build/* dist/
-  cp -r static/* dist/
+  find build static -type f | while read line; do
+    rel="${line#*/}"
+    mkdir -p "dist/$(dirname "$rel")"
+    ln -s "$(realpath "$line")" "dist/$rel"
+  done
 
 push: (compile)
   ebil push --user evergarden dist/
