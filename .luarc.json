@@ -5,7 +5,7 @@
   },
   "workspace": {
     "library": [
-      "/home/robin/dev/maivi/src/lua/runtime"
+      "$MAIVI_RUNTIME"
     ],
     "checkThirdParty": "Disable"
   },
