@@ -32,12 +32,12 @@ whiskers:
 
 compile: build
   #!/usr/bin/env bash
-  rm -r dist
+  [[ -d dist ]] && rm -r dist
   mkdir -p dist/
-  find build static -type f | while read line; do
+  find -L build static -type f | while read line; do
     rel="${line#*/}"
     mkdir -p "dist/$(dirname "$rel")"
-    ln -s "$(realpath "$line")" "dist/$rel"
+    ln -sv "$(realpath "$line")" "dist/$rel"
   done
 
 push: (compile)
