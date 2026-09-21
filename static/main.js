@@ -29,7 +29,20 @@ document.querySelectorAll(".copy").forEach(elem => {
 // scroll ================================================================================
 
 const toggleelem = document.querySelector("#ports-toggle");
-const toggle = (enable) => toggleelem.checked = enable != null ? enable : !toggleelem.checked;
+const calloutelem = document.querySelector("#ports-callout");
+
+function toggle(enable) {
+  toggleelem.checked = enable;
+  toggleelem.dispatchEvent(new Event("change"));
+}
+
+toggleelem.addEventListener("change", (event) => {
+  if (!event.currentTarget.checked) return;
+  sessionStorage.setItem("ports-opened", 1);
+  calloutelem.style.opacity = 0;
+})
+
+if (sessionStorage.getItem("ports-opened")) calloutelem.style.opacity = 0;
 
 const drawer = document.querySelector("#ports-drawer");
 
@@ -44,8 +57,6 @@ const updateToggle = (delta) => {
 let ticking = false;
 
 document.addEventListener("wheel", (event) => {
-  console.log('meow');
-
   if (!ticking) {
     setTimeout(() => {
       updateToggle(event.deltaY);
