@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786916081,
-        "narHash": "sha256-vglldgUuRqqLr6RIy+eCwJlraM+SSda2KFxqUrog8Ns=",
+        "lastModified": 1788872481,
+        "narHash": "sha256-IdzmGXy/3rg3Fjy82feuit8Qgz1tnS+WogNa2w/klM0=",
         "ref": "refs/heads/main",
-        "rev": "506b0be867170c8b4246a2f4548143a182e3b5d1",
-        "revCount": 20,
+        "rev": "71ce6546aa64e31fce4a240ce76e853ef56ecc8f",
+        "revCount": 22,
         "type": "git",
         "url": "https://codeberg.org/comfysage/ebil.git"
       },
@@ -22,11 +22,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1786719841,
-        "narHash": "sha256-QcpQOT0NQEFkI77t+YXPZqDJc35iIodG7zinieOwFUg=",
+        "lastModified": 1789844176,
+        "narHash": "sha256-COQmpo4lFIzMgUjr3ntDpjH0NwrCnf7N0uhR+6WPGP8=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "8be7bd0c83f12e2e3bbba07c9044d6fed9e66f7f",
+        "rev": "79b35bf0bda5cd110f856aa5b5b2c5ba4460dbf5",
         "type": "github"
       },
       "original": {
@@ -50,11 +50,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1773418203,
-        "narHash": "sha256-hQ9JqgkRPTYybdC65v1/1OMc8+7N/u9LaAcxL9uQ3fU=",
+        "lastModified": 1789329367,
+        "narHash": "sha256-tbXWd+Gje7ymO1FyAZcztMy52Uj+RIRFzZIU9tC6MMI=",
         "owner": "everviolet",
         "repo": "whiskers",
-        "rev": "073c5a6504a6aa9814ee33247b2dc6c81b722264",
+        "rev": "f2a9a22cbdf9f541594fe1ba22dc4164c3234545",
         "type": "github"
       },
       "original": {
