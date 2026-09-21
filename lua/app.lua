@@ -62,9 +62,9 @@ by the way, you can try out the colors in your terminal by running: ]]),
             id = "ports-toggle",
           }),
         }),
-        h.div({
+        h.span({
           id = "ports-callout",
-          [[ <-- look at our amazing community ports !! ]],
+          [[ <- look at our cute ports ! ]],
         }),
         h.div({
           class = "links",

@@ -81,6 +81,7 @@ main {
     #ports-callout {
       color: var(--yellow);
       transition: opacity 100ms ease-out;
+      text-wrap: nowrap;
 
       @media (max-width: 800px) {
         display: none;
