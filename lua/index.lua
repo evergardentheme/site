@@ -34,34 +34,14 @@ return function(_)
           property = "og:image",
           content = "https:evergarden.moe/og.png",
         }),
+
+        h.script({
+          defer = "",
+          src = "/main.js",
+        }),
       }),
       h.body({
         maivi.mod("app"),
-        h.script(h.raw(--[[ javascript ]] [[
-async function writeClipboardText(text) {
-  try {
-    await navigator.clipboard.writeText(text);
-  } catch (error) {
-    console.error(error.message);
-  }
-}
-
-function copyhex(event) {
-  event.preventDefault();
-
-  const label = event.currentTarget.querySelector('label');
-  const hex = label.innerText;
-  writeClipboardText(hex);
-  label.innerText = "copied!";
-  setTimeout(() => {
-    label.innerText = hex;
-  }, 1000);
-}
-
-document.querySelectorAll(".copy").forEach(elem => {
-  elem.addEventListener('click', copyhex)
-})
-]])),
       }),
     }),
   })
