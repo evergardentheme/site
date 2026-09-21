@@ -48,9 +48,9 @@ const drawer = document.querySelector("#ports-drawer");
 
 const updateToggle = (delta) => {
   if (toggleelem.checked) {
-    if (delta < 0 && drawer.scrollTop == 0) toggle(false);
+    if (delta < 0 && drawer.scrollTop === 0) toggle(false);
   } else {
-    if (delta > 0 && document.body.scrollTop == document.body.scrollTopMax) toggle(true);
+    if (delta > 0 && document.body.scrollTop === document.body.scrollTopMax) toggle(true);
   }
 };
 
@@ -64,5 +64,19 @@ document.addEventListener("wheel", (event) => {
     }, 20);
 
     ticking = true;
+  }
+})
+
+document.addEventListener("keydown", (event) => {
+  switch (event.key) {
+    case "PageDown":
+    case "ArrowDown":
+      toggle(true);
+      break;
+
+    case "PageUp":
+    case "ArrowUp":
+      if (drawer.scrollTop === 0) toggle(false);
+      break;
   }
 })
