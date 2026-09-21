@@ -25,3 +25,33 @@ function copyhex(event) {
 document.querySelectorAll(".copy").forEach(elem => {
   elem.addEventListener('click', copyhex)
 })
+
+// scroll ================================================================================
+
+const toggleelem = document.querySelector("#ports-toggle");
+const toggle = (enable) => toggleelem.checked = enable != null ? enable : !toggleelem.checked;
+
+const drawer = document.querySelector("#ports-drawer");
+
+const updateToggle = (delta) => {
+  if (toggleelem.checked) {
+    if (delta < 0 && drawer.scrollTop == 0) toggle(false);
+  } else {
+    if (delta > 0 && document.body.scrollTop == document.body.scrollTopMax) toggle(true);
+  }
+};
+
+let ticking = false;
+
+document.addEventListener("wheel", (event) => {
+  console.log('meow');
+
+  if (!ticking) {
+    setTimeout(() => {
+      updateToggle(event.deltaY);
+      ticking = false;
+    }, 20);
+
+    ticking = true;
+  }
+})
