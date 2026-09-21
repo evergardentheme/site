@@ -16,11 +16,6 @@ return function(_)
         h.link({ rel = "stylesheet", href = "/styles/colors.css" }),
         h.link({ rel = "stylesheet", href = "/styles/base.css" }),
         h.link({ rel = "stylesheet", href = "/styles/index.css" }),
-        h.link({
-          rel = "preconnect",
-          href = "https:fonts.gstatic.com",
-          crossorigin = true,
-        }),
         h.title("evergarden"),
         h.meta({ name = "color-scheme", content = "dark" }),
         h.meta({ name = "darkreader-lock" }),
