@@ -63,6 +63,10 @@ by the way, you can try out the colors in your terminal by running: ]]),
           }),
         }),
         h.div({
+          id = "ports-callout",
+          [[ <-- look at our amazing community ports !! ]],
+        }),
+        h.div({
           class = "links",
           h.a({ href = "https://codeberg.org/evergarden", "codeberg" }),
           h.a({ href = "https://github.com/everviolet", "github" }),
