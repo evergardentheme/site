@@ -117,6 +117,10 @@ return {
     desc = "Collection of Nix modules",
   },
   {
+    repo = "noctalia",
+    desc = "Family of native Wayland projects",
+  },
+  {
     repo = "qutebrowser",
     desc = "Keyboard-focused browser with a minimal GUI",
   },
