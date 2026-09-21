@@ -30,10 +30,6 @@ main {
       line-height: 1.4;
       margin: 1rem 0 0;
 
-      @media (min-width: 800px) {
-        font-size: 1.2rem;
-      }
-
       @media (max-width: 800px) {
         margin: 2rem 0 0;
       }
@@ -45,16 +41,13 @@ main {
       padding: 0.5rem;
       margin: 1rem 0 0 0;
       overflow-x: auto;
-
-      @media (min-width: 800px) {
-        font-size: 1.2rem;
-      }
     }
   }
 
   footer {
     text-align: center;
     color: var(--subtext0);
+    margin: 2rem 0;
 
     @media (max-width: 800px) {
       margin: 3rem 0;

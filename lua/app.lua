@@ -3,22 +3,30 @@ return function(_, _)
     h.main({
       h.header({
         h.h1("evergarden"),
-        h.p([[
-evergarden is a colorscheme inspired by lush forests, enchanted groves, and the
-calm of nature. It was also inspired by the lively art of The Legend of Zelda: The
-Minish Cap. It's designed to be easy on the eyes, elegant, and just plain nice to
-look at - whether you're coding, writing, or just staring at your terminal for fun
-(we won't judge). ]]),
+        h.p({
+          [[
+          evergarden is a colorscheme inspired by lush forests, enchanted groves, and the
+          calm of nature. It was also inspired by the lively art of ]],
+          h.em([[The Legend of Zelda: The Minish Cap]]),
+          [[. It's designed to be easy on the eyes, elegant, and just plain nice to look
+          at - whether you're coding, writing, or just staring at your terminal for fun
+          (we won't judge). ]],
+        }),
         h.p([[
 by the way, you can try out the colors in your terminal by running: ]]),
         h.pre({
-          h.code(h.raw([[&#36; curl -L evergarden.moe]])),
+          h.code({
+            h.span({ h.raw([[&#36; ]]) }),
+            h.span({ style = "color: var(--skye);", [[curl ]] }),
+            h.span({ style = "color: var(--subtext1);", [[-L ]] }),
+            h.span({ style = "color: var(--text);", [[evergarden.moe]] }),
+          }),
         }),
       }),
       maivi.mod("components.palette"),
       h.footer({
         h.div({
-          [[built with ]],
+          [[this site is built with ]],
           h.a({
             href = "https://codeberg.org/comfysage/maivi",
             target = "_blank",
