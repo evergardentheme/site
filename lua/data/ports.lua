@@ -53,6 +53,10 @@ return {
     desc = "Lightweight notification daemon",
   },
   {
+    repo = "emacs",
+    desc = "Cool text editor/desktop environment",
+  },
+  {
     repo = "eza",
     desc = "Modern ls(1) alternative",
   },
