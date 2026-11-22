@@ -101,7 +101,7 @@ main {
       gap: var(--padding);
       margin-left: auto;
 
-      overflow-x: scroll;
+      overflow-x: auto;
     }
   }
 }
